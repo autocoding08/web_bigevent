@@ -23,15 +23,15 @@ function getuserInfo() {
         },
         //不论是否成功失败，都会调用complete
         //每次登录都要用到token，所以直接封装到baseAPI中
-        complete: function(res) {
-            console.log('zhixle');
-            console.log(res)
-                //在complete回调函数中，可以使用res.responseJSON拿到服务器响应的数据
-            if (res.responseJSON.status == 1 && res.responseJSON.message === '身份认证失败！') {
-                localStorage.removeItem('token')
-                location.href = './login.html'
-            }
-        }
+        // complete: function(res) {
+        //     console.log('zhixle');
+        //     console.log(res)
+        //         //在complete回调函数中，可以使用res.responseJSON拿到服务器响应的数据
+        //     if (res.responseJSON.status == 1 && res.responseJSON.message === '身份认证失败！') {
+        //         localStorage.removeItem('token')
+        //         location.href = './login.html'
+        //     }
+        // }
     })
 }
 
