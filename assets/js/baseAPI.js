@@ -14,10 +14,10 @@ $.ajaxPrefilter(function(options) {
     //全局统一挂载complete回调函数
     options.complete = function(res) {
 
-        console.log('zhixle');
+        // console.log('zhixle');
         console.log(res)
             //在complete回调函数中，可以使用res.responseJSON拿到服务器响应的数据
-        if (res.responseJSON.status == 1 && res.responseJSON.message === '身份认证失败！') {
+        if (res.responseJSON.status !== 0 && res.responseJSON.message === '身份认证失败！') {
             localStorage.removeItem('token')
             location.href = './login.html'
         }
